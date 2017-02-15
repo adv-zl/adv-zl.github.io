@@ -54,10 +54,10 @@ var fWebOk = function() {
     var gwtHash;
     var token;
     var postpostForm;
-    net.setHost('https://giftcards.ebay.com');
+    net.setHost('http://m.ebay.com');
 
     this.checkAuth = function(callback) {
-        net.get('/gift/?itemId=252347907159&bulkShopCart&bin=https%3A%2F%2Fpay.ebay.com%2Fxo%3Faction%3Dcreate%26rypsvc%3Dtrue%26pagename%3Dryp%26TransactionId%3D-1%26item%3D252347907159&cart=http%3A%2F%2Fcart.payments.ebay.com%2Fsc%2Fadd%3Fsrt%3D010001000000505407c62b67fe0d23eaf7b2a6614818ea6278e7bd24b62ca390861fd7a37b483f7ed797a96ad734ab2512862b3df7e54770e2077d5f670ff7095923497b956a801c9ee2e0f2f74cf2f2b3c07e04774b2b%26ssPageName%3DCART%3AATC&item=iid:252347907159,qty:1,vid:551193564290&showGiftYes', function(response) {
+        net.get('/', function(response) {
             if (response.indexOf('iTunes Codes') == -1) {
                                 console.log(1);
 
