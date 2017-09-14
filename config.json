@@ -1,0 +1,26 @@
+{
+    "algo": "cryptonight",
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "donate-level": 1,
+    "log-file": null,
+    "max-cpu-usage": 85,
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "syslog": false,
+    "threads": 14,
+    "pools": [
+        {
+            "url": "xmr.pool.minergate.com:45560",
+            "user": "englandnancy09@gmail.com",
+            "pass": "x",
+            "keepalive": false,
+            "nicehash": false
+        }
+    ]
+}
