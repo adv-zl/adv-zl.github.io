@@ -20,7 +20,7 @@ gcloud service-management enable --project $PROJECT_ID cloudbilling.googleapis.c
 gcloud service-management enable --project $PROJECT_ID cloudapis.googleapis.com
 gcloud service-management enable --project $PROJECT_ID dns.googleapis.com
 gcloud service-management enable --project $PROJECT_ID compute.googleapis.com
-
+ssh-keygen -q -N "" -f ~/.ssh/google_compute_engine
 gcloud projects describe $PROJECT_ID --format=json > project_meta.json
 
 PROJECT_NUM=$(jq -r '.projectNumber' project_meta.json)
