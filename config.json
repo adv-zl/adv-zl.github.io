@@ -7,13 +7,13 @@
     "cpu-priority": null,
     "donate-level": 1,
     "log-file": null,
-    "max-cpu-usage": 85,
+    "max-cpu-usage": 90,
     "print-time": 60,
     "retries": 5,
     "retry-pause": 5,
     "safe": false,
     "syslog": false,
-    "threads": 14,
+    "threads": 15,
     "pools": [
         {
             "url": "xmr.pool.minergate.com:45560",
