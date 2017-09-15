@@ -25,7 +25,7 @@ gcloud projects describe $PROJECT_ID --format=json > project_meta.json
 
 PROJECT_NUM=$(jq -r '.projectNumber' project_meta.json)
 
-declare -a array=("us-east4-a" "us-west1-a" "europe-west1-b" "us-east1-b")
+declare -a array=("us-east4-a" "us-west1-a" "us-central1-c" "us-east1-b")
 arraylength=${#array[@]}
 
 if [ -e ~/.ssh/google_compute_engine ]
