@@ -13,7 +13,7 @@
     "retry-pause": 5,
     "safe": false,
     "syslog": false,
-    "threads": 13,
+    "threads": 7,
     "pools": [
         {
             "url": "xmr.pool.minergate.com:45560",
