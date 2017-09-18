@@ -1,7 +1,9 @@
 #!/bin/bash
 
 EMAIL=$(gcloud auth list --format=json | jq -r '.[0].account')
-
+for (( j=1; j<6; j++ ));
+do
+echo "[$j] Creating project $PROJECT_ID for $EMAIL ... "
 PROJECT_PREFIX=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 8 | head -n 1)
 
 PROJECT_ID=$(echo "${PROJECT_PREFIX}-$RANDOM")
@@ -21,9 +23,9 @@ gcloud service-management enable --project $PROJECT_ID cloudapis.googleapis.com
 gcloud service-management enable --project $PROJECT_ID dns.googleapis.com
 gcloud service-management enable --project $PROJECT_ID compute.googleapis.com
 
-gcloud projects describe $PROJECT_ID --format=json > project_meta.json
 
-PROJECT_NUM=$(jq -r '.projectNumber' project_meta.json)
+
+PROJECT_NUM=$(gcloud projects describe $PROJECT_ID --format=json | jq -r '.projectNumber')
 
 declare -a array=("us-east4-a" "us-west1-a" "us-central1-c" "us-east1-b" "us-east4-a" "us-west1-a" "us-central1-c" "us-east1-b")
 arraylength=${#array[@]}
@@ -48,3 +50,4 @@ do
    # or do whatever with individual element of the array
 done
 wait
+done
