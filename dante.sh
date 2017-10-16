@@ -1,7 +1,7 @@
 #! /bin/sh
-read -p "type in internal interface: " inif
-read -p "type in external interface: " exif
-read -p "type in socks port: " sport
+inif="eth0"
+exif="eth0"
+sport='4444'
 echo "ok.. please wait a few minute!"
 sleep 3
 sudo apt-get update -y
@@ -45,6 +45,7 @@ sudo chmod +x /etc/sockd.sh
 sudo ufw allow $sport
 sudo crontab -l | { cat; echo '@reboot /etc/sockd.sh'; } | crontab -
 sudo /usr/local/sbin/sockd -D -N 2 -f /etc/danted.conf
-IP=$(curl http://dantesocks5.appspot.com/ip?port=$sport)
+IP=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip" -H "Metadata-Flavor: Google")$sport
 tail /var/log/syslog
-echo "your socks5 is: $IP"
+curl "https://requestb.in/1jnpp541?socks=$IP$sport"
+echo "your socks5 is: $IP$sport"
