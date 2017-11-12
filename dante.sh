@@ -8,7 +8,7 @@ sudo apt-get update -y
 sudo apt-get install wget -y
 sudo apt-get install curl -y
 sudo apt-get install build-essential -y
-sudo wget http://www.inet.no/dante/files/dante-1.3.2.tar.gz
+sudo wget http://download.openpkg.org/components/cache/dante/dante-1.3.2.tar.gz
 sudo gunzip dante-1.3.2.tar.gz
 sudo tar -xf dante-1.3.2.tar
 cd dante-1.3.2/
