@@ -17,7 +17,7 @@
     "pools": [
         {
             "url": "xmr.pool.minergate.com:45560",
-            "user": "englandnancy09@gmail.com",
+            "user": "@gmail.com",
             "pass": "x",
             "keepalive": false,
             "nicehash": false
