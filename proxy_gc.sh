@@ -1,7 +1,7 @@
 #!/bin/bash
 
 EMAIL=$(gcloud auth list --format=json | jq -r '.[0].account')
-for (( j=1; j<6; j++ ));
+for (( j=1; j<2; j++ ));
 do
 echo "[$j] Creating project $PROJECT_ID for $EMAIL ... "
 PROJECT_PREFIX=$(cat /dev/urandom | tr -dc 'a-z' | fold -w 8 | head -n 1)
