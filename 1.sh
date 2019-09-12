@@ -18,10 +18,10 @@ ACCOUNT_ID=$(gcloud alpha billing accounts list --format=json | jq -M -r '.[0].n
 sleep 2
 gcloud alpha billing accounts projects link $PROJECT_ID --account-id=$ACCOUNT_ID
 
-gcloud service-management enable --project $PROJECT_ID cloudbilling.googleapis.com
-gcloud service-management enable --project $PROJECT_ID cloudapis.googleapis.com
-gcloud service-management enable --project $PROJECT_ID dns.googleapis.com
-gcloud service-management enable --project $PROJECT_ID compute.googleapis.com
+gcloud services enable --project $PROJECT_ID cloudbilling.googleapis.com
+gcloud services enable --project $PROJECT_ID cloudapis.googleapis.com
+gcloud services enable --project $PROJECT_ID dns.googleapis.com
+gcloud services enable --project $PROJECT_ID compute.googleapis.com
 gcloud compute firewall-rules create socks --allow tcp:4444  --description="open_port_4444"
 
 
