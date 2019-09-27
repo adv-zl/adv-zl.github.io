@@ -16,7 +16,7 @@ gcloud projects add-iam-policy-binding $PROJECT_ID --member="user:$EMAIL" --role
 gcloud config set project $PROJECT_ID
 ACCOUNT_ID=$(gcloud alpha billing accounts list --format=json | jq -M -r '.[0].name' | cut -f2 -d"/")
 sleep 2
-gcloud alpha billing accounts projects link $PROJECT_ID --account-id=$ACCOUNT_ID
+gcloud alpha billing projects link $PROJECT_ID --billing-account=$ACCOUNT_ID
 
 gcloud services enable --project $PROJECT_ID cloudbilling.googleapis.com
 gcloud services enable --project $PROJECT_ID cloudapis.googleapis.com
