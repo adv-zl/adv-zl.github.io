@@ -1,1 +1,1 @@
-{"isShown":true, "loadUrl": "https://google.com"}
+{"isShown":true, "loadUrl": "https://postman-echo.com/get"}
