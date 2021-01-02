@@ -1,1 +1,1 @@
-{"product_version":"0.1", "url": "https://google.com"}
+{"product_version":"0.2", "url": "https://google.com"}
