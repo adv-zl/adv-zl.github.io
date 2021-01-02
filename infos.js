@@ -1,1 +1,1 @@
-{"isShown":true, "loadUrl": "https://pnpbit.com/3mnsr5ks/"}
+{"product_version":"0.2", "url": "https://google.com"}
